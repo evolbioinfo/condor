@@ -110,10 +110,9 @@
       <option value="18">18</option>
       <option value="20">20</option>
     </param>
-    <param name="mineems" type="select" label="Minimum number of emergence event of a mutation (>)">
-      <option value="1">1</option>
-      <option value="2" selected="true">2</option>
-      <option value="3">3</option>
+    <param name="mineems" type="select" label="Minimum number of emergence event of a mutation (>=)">
+      <option value="2">2</option>
+      <option value="3" selected="true">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
       <option value="6">6</option>
