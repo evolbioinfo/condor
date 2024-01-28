@@ -1,15 +1,18 @@
 # ACCURATE DETECTION OF CONVERGENT MUTATIONS IN LARGE PROTEIN ALIGNMENTS WITH CONDOR
 
-### Marie MOREL, Frédéric LEMOINE, Anna ZHUKOVA and Olivier GASCUEL
+### Marie MOREL, Anna ZHUKOVA, Frédéric LEMOINE and Olivier GASCUEL
 
 Welcome to ConDor workflow repository ! 
 
-In this repository you can find our ConDor workflow developed to detect convergent evolution in amino acid alignments. 
-ConDor is available from a web service located at https://condor.pasteur.cloud/.
+This repository contains the code of ConDor, a  workflow developed to detect convergent evolution in amino acid alignments. 
 
-ConDor is adapted to the detection of evolutionary convergence at the resolution of a mutation especially in large datasets (several hundreds of sequences). 
+Other resources:
+    1. ConDor is also available as a web service ([https://condor.pasteur.cloud](https://condor.pasteur.cloud)).
+    2. All data needed to rerun the analyses described in the article are located in the [condor-analysis](https://github.com/evolbioinfo/condor-analysis) repository.
 
-ConDor pipeline is composed of two independent components: Emergence and Correlation, which can be launched together or not.
+ConDor detects evolutionary convergence at the resolution of a mutation, especially in large datasets (several hundreds of sequences). 
+
+ConDor pipeline is composed of two independent components, Emergence and Correlation, which can be launched together or independently.
 
 # Input Files and Options
 To run ConDor you will need a multiple sequence alignment in fasta format including outgroup sequences, the corresponding tree in newick (with same sequence names as in the alignment), a file with outgroup sequence names and a file containing a list of sequences with the convergent phenotype (can be optional).
