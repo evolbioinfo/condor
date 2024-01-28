@@ -7,8 +7,8 @@ Welcome to ConDor workflow repository !
 This repository contains the code of ConDor, a  workflow developed to detect convergent evolution in amino acid alignments. 
 
 Other resources:
-    1. ConDor is also available as a web service ([https://condor.pasteur.cloud](https://condor.pasteur.cloud)).
-    2. All data needed to rerun the analyses described in the article are located in the [condor-analysis](https://github.com/evolbioinfo/condor-analysis) repository.
+1. ConDor is also available as a web service ([https://condor.pasteur.cloud](https://condor.pasteur.cloud)).
+2. All data needed to rerun the analyses described in the article are located in the [condor-analysis](https://github.com/evolbioinfo/condor-analysis) repository.
 
 ConDor detects evolutionary convergence at the resolution of a mutation, especially in large datasets (several hundreds of sequences). 
 
