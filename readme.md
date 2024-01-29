@@ -4,7 +4,7 @@
 
 Welcome to ConDor workflow repository ! 
 
-This repository contains the code of ConDor, a  workflow developed to detect convergent evolution in amino acid alignments. 
+This repository contains the code of ConDor, a workflow developed to detect convergent evolution in amino acid alignments. 
 
 Other resources:
 1. ConDor is also available as a web service ([https://condor.pasteur.cloud](https://condor.pasteur.cloud)).
