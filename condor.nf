@@ -126,7 +126,7 @@ process find_model {
     if ( model == 'best' )
     // modelfinder on user input tree and alignment
     '''
-    iqtree -m MFP -s !{align} -te !{tree} -nt !{task.cpus} -pre mfp_!{align}
+    iqtree -m MFP -keep-ident -s !{align} -te !{tree} -T AUTO -ntmax !{task.cpus} -pre mfp_!{align}
     grep "Best-fit model" mfp_!{align}.iqtree | cut -d " " -f 6 > best_fit_model.txt
     '''
     else
@@ -215,7 +215,7 @@ process reoptimize_tree {
     //run iqtree with mode given by user. Reestimation rates. Frequencies of model retrieved from matrices file. 
     '''
     iqtreemode=`cat !{iqtree_mode}` 
-    iqtree -m ${iqtreemode} -nt !{task.cpus} -s !{align} -te !{tree} -wsr -pre align
+    iqtree -m ${iqtreemode} -T AUTO -ntmax !{task.cpus} -keep-ident -s !{align} -te !{tree} -wsr -pre align
     tail -n+10 align.rate | cut -f 2 > reestimated_rate
     len=`wc -l reestimated_rate | cut -d " " -f 1`
     if [ "$len" -eq "0" ] ; then for i in {1..!{length}} ; do echo 1 >> reestimated_rate ;done ;  fi
@@ -230,7 +230,7 @@ process reoptimize_tree {
     '''
     sed '/+F/!s/$/+FO/' !{iqtree_mode} | sed 's/+F[^+$]*/+FO/' > corrected_model
     iqtreemode=`cat corrected_model`
-    iqtree -m ${iqtreemode} -nt !{task.cpus} -s !{align} -te !{tree} -wsr -pre align
+    iqtree -keep-ident -m ${iqtreemode} -T AUTO -ntmax !{task.cpus} -s !{align} -te !{tree} -wsr -pre align
     tail -n+10 align.rate | cut -f 2 > reestimated_rate
     len=`wc -l reestimated_rate | cut -d " " -f 1`
     if [ "$len" -eq "0" ] ; then for i in {1..!{length}} ; do echo 1 >> reestimated_rate ;done ;  fi

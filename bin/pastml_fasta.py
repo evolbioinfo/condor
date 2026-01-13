@@ -70,7 +70,7 @@ for n in set(B.index):
     record.append(SeqRecord(Seq("".join(list(B.loc[n]))), id = n, name = n, description = n ))
     if n == "root":
         reconstructed_root = "".join(list(B.loc[n]))
-    elif n == "N000000001":
+    elif n == "N000000001" or n == "NODE_0000001":
         reconstructed_root = "".join(list(B.loc[n]))
 #retrieve reconstructed root
 
